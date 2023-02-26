@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const history = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -11,6 +13,7 @@ function Login() {
         try {
             await auth.signInWithEmailAndPassword(email, password);
             console.log('Login successful');
+            history('/home')
         } catch (error) {
             console.error('Error logging in: ', error);
         }
