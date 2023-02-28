@@ -58,7 +58,7 @@ function Login() {
                                     <input type="password" id="form3Example4" className="form-control " value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </div>
                                 <div className="text-center text-lg-start mt-2 pt-2">
-                                    <p className="small fw mt-0 pt-1 mb-3">Don't have an account? <Link to='/signup'
+                                    <p className="small fw mt-0 pt-1 mb-3">Don't have an account? <Link to='/'
                                         className="link-danger">Register</Link></p>
                                     <button type="submit" className="btn btn-primary btn-lg"
                                         style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}>Login</button>
