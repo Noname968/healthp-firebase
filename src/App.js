@@ -3,7 +3,6 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import profilecontext from './context/Profilecontext'
-import Home from './pages/Home'
 import Adddoc from './components/Adddoc'
 import Docs from './components/Docs'
 
@@ -15,11 +14,10 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <Routes>
-          <Route exact path='/' element={<Signup />} />
+          <Route exact path='/signup' element={<Signup />} />
           <Route path='/login' element={<Login />} />
           {user && (
             <>
-              <Route path='/home' element={<Home />} />
               <Route path='/addoc' element={<Adddoc />} />
               <Route path='/docs' element={<Docs />} />
             </>
