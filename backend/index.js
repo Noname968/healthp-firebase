@@ -21,7 +21,7 @@ app.post('/api/chatbot', async (req, res) => {
         model: "text-davinci-003",
         prompt: `I am experiencing the following symptoms: ${req.body.message}. Can you provide me with a list of possible diseases that may be related to these symptoms?`,
         max_tokens: 100,
-        temperature: 0.1,
+        temperature: 0.6,
     });
     // console.log(response)
     if(response.data.choices[0].text)

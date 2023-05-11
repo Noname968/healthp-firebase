@@ -6,6 +6,7 @@ import 'firebase/compat/firestore';
 import './Adddoc.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Chatbot from './Chatbot';
 
 function Adddoc() {
     const context = useContext(profilecontext);
@@ -79,6 +80,7 @@ function Adddoc() {
                     </div>
                 </form>
             </div>
+            <Chatbot/>
             <ToastContainer/>
         </>
     )
