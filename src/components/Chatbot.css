@@ -1,0 +1,114 @@
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}
+.chatbot-button {
+  border: none;
+  position: absolute;
+  right: 0;
+  background: rgb(110, 72, 170);
+  bottom: 0;
+  height: 56px;
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #fff;
+  z-index: 999;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+}
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgb(110, 72, 170);
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  z-index: 98989;
+}
+.header-right {
+  background: transparent;
+  border: none;
+}
+.csvg {
+  fill: rgb(255, 255, 255);
+}
+.chatbot-interface {
+  background: rgb(245, 248, 251);
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 12px 24px 0px;
+  width: 350px;
+  height: 500px;
+  overflow-y: scroll;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 68697;
+}
+.chat-history {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.user {
+  background: rgb(255, 255, 255);
+  border-radius: 18px 18px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+  color: rgb(74, 74, 74);
+  padding: 10px;
+  max-width: 60%;
+  text-align: right;
+  margin-left: auto;
+}
+
+.chatbot {
+  background: rgb(110, 72, 170);
+  border-radius: 18px 18px 18px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  max-width: 65%;
+  text-align: left;
+  margin-right: auto;
+}
+
+.speaker {
+  font-weight: bold;
+  display: block;
+  text-transform: capitalize;
+  text-align: left;
+}
+.chat-form {
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  padding: 12px 10px 12px 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 0px 0px 8px 8px;
+  z-index: 111112;
+}
+.inputb {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+.submitbtn {
+  background: transparent;
+  border: none;
+  fill: rgb(74, 74, 74);
+  opacity: 0.7;
+}

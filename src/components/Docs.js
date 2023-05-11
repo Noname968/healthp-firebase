@@ -7,6 +7,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
+import Chatbot from "./Chatbot";
 
 function Docs() {
   const context = useContext(profilecontext);
@@ -122,6 +123,7 @@ function Docs() {
           </div>
         </div>
       )}
+      <Chatbot/>
       <ToastContainer/>
     </>
   );
