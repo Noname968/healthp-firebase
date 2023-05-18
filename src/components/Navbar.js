@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useNavigate,useLocation } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { auth } from '../firebase';
 
 function Navbar() {
@@ -21,10 +21,13 @@ function Navbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname === '/addoc' ? 'active' : ""}`} aria-current="page" to="/addoc">Add Doc</Link>
+                                <Link className={`nav-link ${location.pathname === '/addoc' ? 'active' : ""}`} aria-current="page" to="/addoc">Upload File</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={`nav-link ${location.pathname === '/docs' ? 'active' : ""}`} to="/docs">Docs</Link>
+                                <Link className={`nav-link ${location.pathname === '/docs' ? 'active' : ""}`} to="/docs">DataVault</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className={`nav-link ${location.pathname === '/healthplan' ? 'active' : ""}`} to="/healthplan">HealthGuide</Link>
                             </li>
                         </ul>
                         <div className="d-flex" onClick={handleLogout}>

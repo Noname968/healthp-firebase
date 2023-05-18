@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Chatbot.css";
 
@@ -7,13 +7,22 @@ function Chatbot() {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
 
+  useEffect(() => {
+    // Add a default message when the component mounts
+    setChatHistory([
+      { speaker: "chatbot", text: "Please type your symptoms..." }
+    ]);
+  }, []);
+
   const handleUserInput = (event) => {
     setMessage(event.target.value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post("http://localhost:5000/api/chatbot", { message });
+    // const response = await axios.post("http://localhost:5000/api/chatbot", { message });
+    const response = await axios.post(`https://5000-cs-a0d0dbaa-5621-4639-bc8d-f350dfbbd782.cs-asia-southeast1-ajrg.cloudshell.dev/?authuser=2&redirectedPreviously=true`,{message});
+    console.log(response)
     setChatHistory([
       ...chatHistory,
       { speaker: "user", text: message },

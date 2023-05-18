@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link } from "react-router-dom";
 import Chatbot from "./Chatbot";
+import firebase from 'firebase/compat/app';
 
 function Docs() {
   const context = useContext(profilecontext);
@@ -47,7 +48,14 @@ function Docs() {
     // eslint-disable-next-line
   }, []);
 
-  const handleDelete = (id) => {
+  const handleDelete = (id, url) => {
+    const storageref = firebase.storage().refFromURL(url);
+    storageref.delete().then(() => {
+      console.log('File deleted successfully');
+    }).catch((error) => {
+      console.log('Error deleting file:', error);
+    });
+
     firestore.collection("userfiles").doc(id).delete()
       .then(() => {
         console.log("Document successfully deleted!");
@@ -107,24 +115,24 @@ function Docs() {
                 </tr>
               </thead>
               <tbody>
-                {filteredDocs.length>0 ? filteredDocs.map((doc, index) => (
+                {filteredDocs.length > 0 ? filteredDocs.map((doc, index) => (
                   <tr key={doc.id}>
                     <td>{index + 1}</td>
                     <td>{doc.name}</td>
                     <td>{dateconvert(doc.createdAt.toJSON())}</td>
                     <td><a href={doc.fileUrl} rel="noreferrer" className="clickb" target="_blank">Click Here </a></td>
-                    <td className="bin" onClick={() => handleDelete(doc.id)}> <DeleteIcon /> </td>
+                    <td className="bin" onClick={() => handleDelete(doc.id, doc.fileUrl)}> <DeleteIcon /> </td>
                   </tr>
-                )):(
+                )) : (
                   <p className="pp">No docs to display. To add a doc <Link to='/addoc' className="linkto">click Here</Link></p>
-                  )}
-                  </tbody>
+                )}
+              </tbody>
             </table>
           </div>
         </div>
       )}
-      <Chatbot/>
-      <ToastContainer/>
+      <Chatbot />
+      <ToastContainer />
     </>
   );
 }

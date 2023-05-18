@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import profilecontext from './context/Profilecontext'
 import Adddoc from './components/Adddoc'
 import Docs from './components/Docs'
+import Healthplan from './components/Healthplan'
 
 function App() {
   const context = useContext(profilecontext);
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           {user && (
             <>
+              <Route path='/healthplan' element={<Healthplan/> } />
               <Route path='/addoc' element={<Adddoc />} />
               <Route path='/docs' element={<Docs />} />
             </>
