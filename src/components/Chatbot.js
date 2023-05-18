@@ -20,7 +20,8 @@ function Chatbot() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post("http://localhost:5000/api/chatbot", { message });
+    // const response = await axios.post("http://localhost:5000/api/chatbot", { message });
+    const response = await axios.post("https://healthp-firebase.onrender.com/api/chatbot", { message });
     console.log(response)
     setChatHistory([
       ...chatHistory,
