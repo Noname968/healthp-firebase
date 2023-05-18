@@ -20,8 +20,7 @@ function Chatbot() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // const response = await axios.post("http://localhost:5000/api/chatbot", { message });
-    const response = await axios.post(`https://5000-cs-a0d0dbaa-5621-4639-bc8d-f350dfbbd782.cs-asia-southeast1-ajrg.cloudshell.dev/?authuser=2&redirectedPreviously=true`,{message});
+    const response = await axios.post("http://localhost:5000/api/chatbot", { message });
     console.log(response)
     setChatHistory([
       ...chatHistory,
